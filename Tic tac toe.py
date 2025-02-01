@@ -2,11 +2,11 @@ n=0
 l=[]
 print('Player 1: X\nPlayer 2: O')
 for i in range(9):
-    l.append(i)
+    l.append(i+1)
 print('', l[0], '|', l[1], '|', l[2], '\n-----------\n', l[3], '|', l[4], '|', l[5], '\n-----------\n', l[6], '|', l[7], '|', l[8])
 moves=[]
 while n!=1:
-    a = int(input('Player 1, enter your move:'))
+    a = int(input('Player 1, enter your move:'))-1
     if a in moves:
         print('Invalid move.')
     else:
@@ -26,7 +26,7 @@ while n!=1:
             else:
                 print('Nice game, but no one won')
                 break
-    b = int(input('Player 2, enter your move:'))
+    b = int(input('Player 2, enter your move:'))-1
     if b in moves:
         print('Invalid move.')
     else:
