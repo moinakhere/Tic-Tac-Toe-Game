@@ -1,9 +1,28 @@
+def win(a):
+    if (l[0]==l[1]==l[2]==a) or (l[3]==l[4]==l[5]==a) or (l[6]==l[7]==l[8]==a) or (l[0]==l[3]==l[6]==a) or (l[1]==l[4]==l[7]==a) or (l[2]==l[5]==l[8]==a) or (l[0]==l[4]==l[8]==a) or (l[2]==l[4]==l[6]==a):
+        return True
+    return False
+def draw():
+    if (l[0]!=l[1]!=l[2]) or (l[3]!=l[4]!=l[5]) or (l[6]!=l[7]!=l[8]) or (l[0]!=l[3]!=l[6]) or (l[1]!=l[4]!=l[7]) or (l[2]!=l[5]!=l[8]) or (l[0]!=l[4]!=l[8]) or (l[2]!=l[4]!=l[6]):
+        return True
+    return False
+def final_check():
+    if l[0]!=0 and l[1]!=1 and l[2]!=2 and l[3]!=3 and l[4]!=4 and l[5]!=5 and l[6]!=6 and l[7]!=7 and l[8]!=8:
+        return True
+def draw_board():
+    print('', l[0], '|', l[1], '|', l[2], '\n-----------\n', l[3], '|', l[4], '|', l[5], '\n-----------\n', l[6], '|', l[7], '|', l[8])
 n=0
 l=[]
-print('Player 1: X\nPlayer 2: O')
+print("""Rules of the game:
+      1. The game is played on a 3x3 grid.
+      2. Player 1 uses 'X' and Player 2 uses 'O'.
+      3. Players will have to enter the cell the number of choice to place the move.
+      4. Players take turns placing their marks in empty squares.
+      5. The first player to get three of their marks in a row (vertically, horizontally, or diagonally) wins.
+      6. If all squares are filled and no player has three in a row, the game ends in a draw.""")
 for i in range(9):
     l.append(i+1)
-print('', l[0], '|', l[1], '|', l[2], '\n-----------\n', l[3], '|', l[4], '|', l[5], '\n-----------\n', l[6], '|', l[7], '|', l[8])
+print(draw_board())
 moves=[]
 while n!=1:
     a = int(input('Player 1, enter your move:'))-1
@@ -15,12 +34,12 @@ while n!=1:
             if a == l[i]:
                 l.pop(a)
                 l.insert(a,'X')
-        print('', l[0], '|', l[1], '|', l[2], '\n-----------\n', l[3], '|', l[4], '|', l[5], '\n-----------\n', l[6], '|', l[7], '|', l[8])
-        if (l[0]==l[1]==l[2]=='X') or (l[3]==l[4]==l[5]=='X') or (l[6]==l[7]==l[8]=='X') or (l[0]==l[3]==l[6]=='X') or (l[1]==l[4]==l[7]=='X') or (l[2]==l[5]==l[8]=='X') or (l[0]==l[4]==l[8]=='X') or (l[2]==l[4]==l[6]=='X'):
+        print(draw_board())
+        if win('X'):
             print('Player 1 is the winner!')
             break
-        elif l[0]!=0 and l[1]!=1 and l[2]!=2 and l[3]!=3 and l[4]!=4 and l[5]!=5 and l[6]!=6 and l[7]!=7 and l[8]!=8:
-            if (l[0]!=l[1]!=l[2]) or (l[3]!=l[4]!=l[5]) or (l[6]!=l[7]!=l[8]) or (l[0]!=l[3]!=l[6]) or (l[1]!=l[4]!=l[7]) or (l[2]!=l[5]!=l[8]) or (l[0]!=l[4]!=l[8]) or (l[2]!=l[4]!=l[6]):
+        elif final_check():
+            if draw():
                 print('Nice game, but no one won')
                 break
             else:
@@ -35,7 +54,7 @@ while n!=1:
             if b == l[i]:
                 l.pop(b)
                 l.insert(b,'O')
-        print('', l[0], '|', l[1], '|', l[2], '\n-----------\n', l[3], '|', l[4], '|', l[5], '\n-----------\n', l[6], '|', l[7], '|', l[8])
-        if (l[0]==l[1]==l[2]=='O') or (l[3]==l[4]==l[5]=='O') or (l[6]==l[7]==l[8]=='O') or (l[0]==l[3]==l[6]=='O') or (l[1]==l[4]==l[7]=='O') or (l[2]==l[5]==l[8]=='O') or (l[0]==l[4]==l[8]=='O') or (l[2]==l[4]==l[6]=='O'):
+        print(draw_board())
+        if win('O'):
             print('Player 2 is the winner!')
             break
