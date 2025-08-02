@@ -87,24 +87,11 @@ def draw_board():
     """
 
     print(
-        "",
-        place[0],
-        "|",
-        place[1],
-        "|",
-        place[2],
+        place[0],"|",place[1],"|",place[2],
         "\n-----------\n",
-        place[3],
-        "|",
-        place[4],
-        "|",
-        place[5],
+        place[3],"|",place[4],"|",place[5],
         "\n-----------\n",
-        place[6],
-        "|",
-        place[7],
-        "|",
-        place[8],
+        place[6],"|",place[7],"|",place[8],
     )
 
 
@@ -147,3 +134,4 @@ while any(isinstance(i, int) for i in place):
     if not any(isinstance(i, int) for i in place):
         print("Nice game, but no one won")
         break
+
