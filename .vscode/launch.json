@@ -5,16 +5,11 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Python: Tic Tac Toe",
-            "type": "python",
+            "name": "Python Debugger: Current File",
+            "type": "debugpy",
             "request": "launch",
-            "program": "${workspaceFolder}/Tic tac toe.py",
-            "console": "integratedTerminal",
-            "justMyCode": true,
-            "env": {
-                "PYTHONPATH": "${workspaceFolder}"
-            }
+            "program": "${file}",
+            "console": "integratedTerminal"
         }
-        
     ]
 }
