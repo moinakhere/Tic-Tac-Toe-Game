@@ -14,7 +14,7 @@ A simple Tic-Tac-Toe game implemented in Python.
 
 ### Prerequisites
 
-- Python 3.x
+- Python 3.1x.x
 
 ### Running the Game
 
