@@ -21,31 +21,8 @@ Functions:
 
 Credits:
     - Author: moinakhere
-    - Date: 02/08/2025
-    - Version: 1.0
-    - License: MIT License
-
-MIT License
-
-Copyright (c) 2025 moinakhere
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+    - Date: 03//2025
+    - Version: 1.1
 """
 
 
@@ -114,7 +91,7 @@ while any(isinstance(i, int) for i in place):
     place[a] = "X"
     draw_board()
     if win("X"):
-        print("Player 1 is the winner!")
+        print("Player 1 WON!")
         break
     elif not any(isinstance(i, int) for i in place):
         print("Nice game, but no one won")
@@ -126,7 +103,7 @@ while any(isinstance(i, int) for i in place):
     place[b] = "O"
     draw_board()
     if win("O"):
-        print("Player 2 is the winner!")
+        print("Player 2 WON!")
         break
     elif not any(isinstance(i, int) for i in place):
         print("Nice game, but no one won")
